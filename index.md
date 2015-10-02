@@ -11,4 +11,4 @@ Re: [this stack overflow question](http://stackoverflow.com/questions/32877440/h
 
 ## Internal ideas on implementation
 
-* [Isaac's first thoughts](https://github.com/picoknow/amicum/wiki/Isaac's-first-thoughts)
+* [First thoughts](notes/first-thoughts)
