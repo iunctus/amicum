@@ -7,7 +7,7 @@ layout: default
 
 There is a theory that any person in the world can be reached through a chain of just 6 friends. This repo shows our efforts at testing this hypothesis using real-world data.
 
-http://stackoverflow.com/questions/32877440/how-can-i-find-a-path-between-two-abstract-nodes/32885076#32885076
+Re: [this stack overflow quesstion](http://stackoverflow.com/questions/32877440/how-can-i-find-a-path-between-two-abstract-nodes/32885076#32885076).
 
 ## Internal ideas on implementation
 
