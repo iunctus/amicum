@@ -1,0 +1,216 @@
+html {
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;	
+	font-family:Raleway;
+	background-image:url('https://download.unsplash.com/photo-1437869328129-2369d96ff9f2');
+	background-size:cover;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+body {
+	position:absolute;
+	right:0;
+	top:0;
+	width:67%;
+}
+
+aside {
+	position:fixed;
+	left:0;
+	top:0;
+	bottom:0;
+	height:100%;
+	width:30%;
+	background-color:#333;
+	opacity:0.7;
+	color:white;
+	text-align:center;
+	border-right:3px solid #222;
+	box-sizing:border-box;
+}
+
+aside #content {	
+	position: relative;
+ 	top: 32%;
+	transform: translateY(-50%);
+}
+
+aside hr {
+	width:90%;
+	height:4px;
+	border:none;
+	border-radius:1px;
+	/* Chrome 10+,Safari */
+	background : -webkit-linear-gradient(left, rgb(215, 208, 146) 00%, rgb(215, 208, 146) 25%, rgb(29, 67, 76) 25%, rgb(29, 67, 76) 50%, rgb(1, 49, 63) 50%, rgb(1, 49, 63) 75%, rgb(0, 27, 47) 75%);
+
+	/* Firefox 4+ */ 
+	background : -moz-linear-gradient(left, rgb(215, 208, 146) 00%, rgb(215, 208, 146) 25%, rgb(29, 67, 76) 25%, rgb(29, 67, 76) 50%, rgb(1, 49, 63) 50%, rgb(1, 49, 63) 75%, rgb(0, 27, 47) 75%);
+
+	/* Opera */
+	background : -o-linear-gradient(left, rgb(215, 208, 146) 00%, rgb(215, 208, 146) 25%, rgb(29, 67, 76) 25%, rgb(29, 67, 76) 50%, rgb(1, 49, 63) 50%, rgb(1, 49, 63) 75%, rgb(0, 27, 47) 75%);
+
+	/* IE 10+ */
+	background : -ms-linear-gradient(left, rgb(215, 208, 146) 00%, rgb(215, 208, 146) 25%, rgb(29, 67, 76) 25%, rgb(29, 67, 76) 50%, rgb(1, 49, 63) 50%, rgb(1, 49, 63) 75%, rgb(0, 27, 47) 75%); 
+
+	/* W3C */
+	background : -linear-gradient(left, rgb(215, 208, 146) 00%, rgb(215, 208, 146) 25%, rgb(29, 67, 76) 25%, rgb(29, 67, 76) 50%, rgb(1, 49, 63) 50%, rgb(1, 49, 63) 75%, rgb(0, 27, 47) 75%);
+}
+
+aside footer {
+	position:absolute;
+	bottom:0px;
+	left:0;
+	width:100%;
+	font-size:18px;
+	border-top:2px solid white;
+	height:54px;
+	line-height:25px;
+	padding-top:4px;
+}
+
+aside a {
+	color:white;
+}
+
+article {
+	display:block;
+	margin-bottom:25px;
+	margin-right:20px;
+	background-color:white;
+	opacity:0.9;
+	height:400px;
+	padding:15px;
+	box-sizing:border-box;
+	position:relative;
+	text-align: left;
+	font-size:medium;
+	top:0;
+	right:0;
+	overflow-y:hidden;
+	transition: height 1s, width 1s, text-align 1s, font-size 1s, margin-right 0.5s, opacity 1s;
+}
+
+article h1 {
+	margin:0;
+	font-size:175%;
+}
+
+article h2 {
+	color:grey;
+	font-size:100%;
+	margin:2px;
+}
+
+article a {
+	color:grey;
+}
+
+article a.readMore {
+	position:absolute;
+	bottom:10px;
+	right:20px;
+}
+
+article a.button {
+	display:inline-block;
+	position:relative;
+	top:0;
+	height:40px;
+	width:100px;
+	color:gray;
+	background-color:#DDDDDD;
+	border-bottom:4px solid #aaa;
+	line-height:40px;
+	font-size:larger;
+	text-decoration:none;
+	text-align:center;
+}
+
+article a.button:hover {
+	top:3px;
+	color:gray;
+	background-color:#DDDDDD;
+	border-bottom:1px solid #aaa;
+}
+
+article p {
+	overflow:hidden;
+	height:74%;
+}
+
+article .h3 {
+	font-size:150%;
+}
+
+article.fs {
+	position:fixed;
+	height:100%;
+	width:70%;
+	padding-left:20px;
+	margin-right:0;
+	opacity:1;
+	transition: height 1s, width 1s, text-align 1s, font-size 1s, margin-right 0.5s, opacity 1s;
+	z-index: 111;
+	overflow-x:auto;
+}
+
+article.fs a {
+	font-size:inherit;
+}
+article.fs p {
+	overflow:auto;
+	height:90%;
+}
+article.fs a.readMore {
+	top:10px;
+	bottom:initial;
+}
+
+@media screen and (max-width: 880px) {
+	aside footer {
+		height:85px;
+		padding-top:8px;	
+	}
+}
+
+@media screen and (max-width: 720px) {
+	aside {
+		position:relative;
+		top:-20px;
+		left:0;
+		right:0;
+		height:450px;
+		width:100%;
+		border-right:none;
+		border-bottom:3px solid #222;
+	}
+	body {
+		width:100%;
+		left:0;
+		right:0;
+		margin:0;
+	}
+	aside #content {
+		top:42%;
+	}
+	aside footer {
+		height:54px;
+		line-height:25px;
+		padding-top:4px;
+	}
+	article {
+		margin: 10px auto;
+		text-align: center;
+	}
+	
+	article.fs {
+		position:relative;
+		height:700px;
+		width:auto;
+		margin:10px auto;
+	}
+}
