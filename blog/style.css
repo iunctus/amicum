@@ -55,6 +55,7 @@ aside hr {
 	/* W3C */
 	background : -linear-gradient(left, rgb(203, 181, 149) 00%, rgb(203, 181, 149) 25%, rgb(89, 129, 160) 25%, rgb(66, 107, 143) 50%, rgb(157, 128, 110) 50%, rgb(178, 145, 120) 75%, rgb(98, 102, 68) 75%);
 }
+
 aside footer {
 	position:absolute;
 	bottom:0px;
@@ -69,6 +70,10 @@ aside footer {
 
 aside a {
 	color:white;
+}
+
+aside p {
+	margin:10px;
 }
 
 article {
