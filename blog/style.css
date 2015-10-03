@@ -4,7 +4,7 @@ html {
 	margin:0;
 	padding:0;	
 	font-family:Raleway;
-	background-image:url('https://download.unsplash.com/photo-1437869328129-2369d96ff9f2');
+	background-image:url('https://images.unsplash.com/uploads/141172692104151d94dd4/4f900e54?q=80&fm=jpg');
 	background-size:cover;
 	background-attachment:fixed;
 	background-repeat:no-repeat;
@@ -45,21 +45,16 @@ aside hr {
 	border:none;
 	border-radius:1px;
 	/* Chrome 10+,Safari */
-	background : -webkit-linear-gradient(left, rgb(215, 208, 146) 00%, rgb(215, 208, 146) 25%, rgb(29, 67, 76) 25%, rgb(29, 67, 76) 50%, rgb(1, 49, 63) 50%, rgb(1, 49, 63) 75%, rgb(0, 27, 47) 75%);
-
+	background : -webkit-linear-gradient(left, rgb(203, 181, 149) 00%, rgb(203, 181, 149) 25%, rgb(89, 129, 160) 25%, rgb(66, 107, 143) 50%, rgb(157, 128, 110) 50%, rgb(178, 145, 120) 75%, rgb(98, 102, 68) 75%);
 	/* Firefox 4+ */ 
-	background : -moz-linear-gradient(left, rgb(215, 208, 146) 00%, rgb(215, 208, 146) 25%, rgb(29, 67, 76) 25%, rgb(29, 67, 76) 50%, rgb(1, 49, 63) 50%, rgb(1, 49, 63) 75%, rgb(0, 27, 47) 75%);
-
+	background : -moz-linear-gradient(left, rgb(203, 181, 149) 00%, rgb(203, 181, 149) 25%, rgb(89, 129, 160) 25%, rgb(66, 107, 143) 50%, rgb(157, 128, 110) 50%, rgb(178, 145, 120) 75%, rgb(98, 102, 68) 75%);
 	/* Opera */
-	background : -o-linear-gradient(left, rgb(215, 208, 146) 00%, rgb(215, 208, 146) 25%, rgb(29, 67, 76) 25%, rgb(29, 67, 76) 50%, rgb(1, 49, 63) 50%, rgb(1, 49, 63) 75%, rgb(0, 27, 47) 75%);
-
+	background : -o-linear-gradient(left, rgb(203, 181, 149) 00%, rgb(203, 181, 149) 25%, rgb(89, 129, 160) 25%, rgb(66, 107, 143) 50%, rgb(157, 128, 110) 50%, rgb(178, 145, 120) 75%, rgb(98, 102, 68) 75%);
 	/* IE 10+ */
-	background : -ms-linear-gradient(left, rgb(215, 208, 146) 00%, rgb(215, 208, 146) 25%, rgb(29, 67, 76) 25%, rgb(29, 67, 76) 50%, rgb(1, 49, 63) 50%, rgb(1, 49, 63) 75%, rgb(0, 27, 47) 75%); 
-
+	background : -ms-linear-gradient(left, rgb(203, 181, 149) 00%, rgb(203, 181, 149) 25%, rgb(89, 129, 160) 25%, rgb(66, 107, 143) 50%, rgb(157, 128, 110) 50%, rgb(178, 145, 120) 75%, rgb(98, 102, 68) 75%);
 	/* W3C */
-	background : -linear-gradient(left, rgb(215, 208, 146) 00%, rgb(215, 208, 146) 25%, rgb(29, 67, 76) 25%, rgb(29, 67, 76) 50%, rgb(1, 49, 63) 50%, rgb(1, 49, 63) 75%, rgb(0, 27, 47) 75%);
+	background : -linear-gradient(left, rgb(203, 181, 149) 00%, rgb(203, 181, 149) 25%, rgb(89, 129, 160) 25%, rgb(66, 107, 143) 50%, rgb(157, 128, 110) 50%, rgb(178, 145, 120) 75%, rgb(98, 102, 68) 75%);
 }
-
 aside footer {
 	position:absolute;
 	bottom:0px;
