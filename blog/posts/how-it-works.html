@@ -34,6 +34,16 @@
 		Well, assuming the algorithm is implemented correctly, both of the points are equally valid and both will give the shortest path from the origin to the target.<br/>
 		If the origin and target nodes are further apart than this, then this positive/negative looping cycling continues until a point is found with a <samp>distStart</samp> and <samp>distEnd</samp> is defined, after which the path can be traced forward and back.<br/>
 		<br /> <br/>
+		<span class="h3">Worked Example</span><br/>
+		Assume we have <a href="http://hansolav.net/sql/dijkstra_graph.png" target="_blank">this network</a>, and we wish to find the shortest route from. Seattle to Washington DC, assumng the distance between each and every city is eaxactly the same.<br/>
+		We first give the Seattle Node a <samp>distStart</samp> of 0 and DC a <samp>distEnd</samp> of -0<br/>
+		Then, we give San Fransisco, Minneapolis and Denver a <samp>distStart</samp> of 1. None of these cities has a <samp>distEnd</samp> assigned, so the loop continues.<br />
+		We then give Boston, New York, Miami, Dallas and Chicago a <samp>distEnd</samp> of -1. Again, none of these cities have a <samp>distStart</samp> defined, so the loop continues.<br />
+		We now loop through the nodes with a <samp>distStart</samp> of 1 and give their partner nodes a <samp>distStart</samp> of 2 if they do not already have one.<br/>
+		This means that Chicago, Dallas, Las Vegas and Los Angeles all have a <samp>distStart</samp> of 2 assigned. The other <samp>distStart</samp> values were not changed as that would not be the most in efficient route. (Why go from Seattle to Denver via Minneapolis if you can go directly?)<br/>
+		We now have 2 nodes with a <samp>distStart</samp> and <samp>distEnd</samp> defined
+		
+		<br /> <br/>
 		All of the artwork and photography for this blog is from <a href="//unsplash.com">Unsplash</a>, who offer free to use high resolution images. We at Amicum love their artwork and highly recommend it to any developer.   
 	</p>
 	<a class="readMore" href="/amicum/blog">Read more</a>
