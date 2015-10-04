@@ -39,20 +39,28 @@
 		<br /> <br/>
 		<span class="h3">Worked Example</span><br/>
 		Assume we have <a href="http://hansolav.net/sql/dijkstra_graph.png" target="_blank">this network</a>, and we wish to find the shortest route from. Seattle to Washington DC, assumng the distance between each and every city is exactly the same.<br />
+		<br />
 		We first give the Seattle Node a <samp>distStart</samp> of 0 and DC a <samp>distEnd</samp> of -0. Then, we give San Francisco, Minneapolis and Denver a <samp>distStart</samp> of 1. None of these cities has a <samp>distEnd</samp> assigned, so the loop continues.
 		We then give Boston, New York, Miami, Dallas and Chicago a <samp>distEnd</samp> of -1. Again, none of these cities have a <samp>distStart</samp> defined, so the loop continues. We now loop through the nodes with a <samp>distStart</samp> of 1 and give their partner nodes a <samp>distStart</samp> of 2 if they do not already have one.
 		This means that Chicago, Dallas, Las Vegas and Los Angeles all have a <samp>distStart</samp> of 2 assigned. The other <samp>distStart</samp> values were not changed as that would not be the most in efficient route. (Why go from Seattle to Denver via Minneapolis if you can go directly?)<br />
+		<br />
 		We now have 2 nodes with a <samp>distStart</samp> and <samp>distEnd</samp> defined - The Chicago and Dallas nodes. As the amicum algorithm is not designed nor intended to deal with real-world distances, both of these nodes are considered to be equally distant, and therefore either can be chosen. We then store one of these central nodes in an Array. <br />
+		<br />
 		In this case, lets pick Chicago. We have our midpoint of chicago and we can work forward an back from here. We then push the node connected to the chicago node with a <samp>distStart</samp> of 2 to the array - in this case, Minneapolis. If we had chosen Dallas instead of Chicago then we could have used Denver instead of Minneapolis.<br />
+		<br />
 		Our array now looks like this: <samp>["Chicago","Minneapolis"]</samp><br />
+		<br />
 		We then push the partner node of the Minneapolis node with a <samp>distStart</samp> of 0 - i.e the target node. <br />
 		Our array now looks like this: <samp>["Chicago","Minneapolis","Seattle"]</samp> <br />
+		<br />
 		We now loop forward from the central node - that is, we look forward from Chicago. Chicago has a <samp>distEnd</samp> of -1 so we find the node with <samp>distEnd</samp> of -1 + 1 = -0, or, in other words, we push the target node to the array.<br />
 		Our array now looks like this: <samp>["Chicago","Minneapolis","Seattle","Washington DC"]</samp><br/>
+		<br />
 		We now need to sort this array to show the order traversed. We do this by using the <samp>distStart</samp> and <samp>distEnd</samp> values.<br />
-		Our array now looks like this: <samp>[2,1,0,-0]</samp>. We use 2 instead of -1 as 2 was the last number assigned, though it does not really matter at this point, it just makes the next step easier. 
+		Our array now looks like this: <samp>[2,1,0,-0]</samp>. <br />We use 2 instead of -1 as 2 was the last number assigned, though it does not really matter at this point, it just makes the next step easier. <br/>
 		The negative values are already in order as we looped forwards, but the positive values are in reverse order. To do this, we remove the negative values and put them into another array, preserving the order, an then we sort the positive numbers by size, before returning the negative numbers unaltered.<br />
 		Our array now looks like this: <samp>[0,1,2,-0]</samp>		<br />
+		<br />
 		Now we simply convert the numbers back to their original names.<br />
 		Our array now looks like this: <samp>["Seattle","Minneapolis","Chicago","Washington DC"]</samp><br/>
 		<br />
