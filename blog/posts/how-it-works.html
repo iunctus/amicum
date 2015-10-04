@@ -1,13 +1,38 @@
 <article id="how-it-works">
-	<h1>Hello World!</h1>
-	<h2>By Deep Sohelia, 3rd October 2015</h2>
+	<h1>How the Amicum algorithm works</h1>
+	<h2>By Deep Sohelia, 4th October 2015</h2>
 	<p>
-		This is our first post! We have just finished writing the code for the blog! <br />
-		This Blog will be updated monthly if not weekly, with updates on the progress of Amicum, along with how you can participate. We will feature both our thoughts and actual implementation of the algorithm, along with what we will use it for. In other words, watch this space. <br /> <br />
+		We have been thinking on how to actually find a path, let alone the shortest path in a network, and we have an Idea as to how to do this.<br />
 		
-		<span class="h3">How this blog works</span><br/>
-		This was entirely created by me, <a href="//chillibyte.github.io">Deep Sohelia</a> both the template and the post loading system. The only exception being the use of AHAH, or Asyncronous HTML and HTTP, a small (8 lines or so) script which is used to fetch these posts. There is no jQuery involved, thankfully. The system works by storing the file names of all posts that are to be loaded in an array, and then looping through the array, loading in each post. While not the most elegant of solutions, it is the lightest in terms of SLOC. It means I can use as <strong>much fancy markup</strong> as I want, making it my far the most lightweight and customizable way for me to make blog posts. <br /> 
-		The template is downloadable over <a href="//chillibyte.github.io/templates/">here</a>.
+		<span class="h3">The nature of networks</span><br/>
+		Networks in the real world, be they of computer systems, the spread of disease or, in this case, the interconnectedness of mankind differ wildly, and no two networks will be the same. There are many factors one must take into consideration when analyzing a network. These include: <br />
+		&#09;- Size<br/>
+		&#09;- Clustering<br/>
+		&#09;- Spread/Interconnectedness<br/>
+		&#09;- Complexity<br/>
+		<br />
+		These factors are all key when pathfinding through a network - larger networks, more clustered networks, isolated networks and complex networks are all much harder and more time consuming to route through compared to small, interconnected, simple networks. <br/>
+		Due to these wildly varying variables, we decided it was necessary that there was a single algorithm for all networks rather than attempting to judge the state of the network in an attempt to "streamline" the pathfinding procedure. This sacrifices speed, but it means that the SLOC written are drastically reduced.
+		<span class="h3">How the algorithm works</span><br/>
+		Assume we have a network not visually unlike <a href="http://hansolav.net/sql/dijkstra_graph.png" target="_blank">This one</a>, and we only know the origin and target node.<br/>
+		<br/>
+		Each node contains two key values, along with any extra necessary data showing what it represents. These values are the distance from the orgin and the distance from the end. Both of these values are set to "", <samp>null</samp>  or <samp>undefined</samp>.<br/>
+		For example, if these nodes were people, they'd be stored as something like this:<br/>
+		<code>
+		{
+			"name":"John Doe",
+			"age":20,
+			"friends":["Foo Bar","John Smith"],
+			"distStart":null,
+			"distEnd":null
+		}
+		</code><br/>
+		The algorithm begins by assigning the origin node a <samp>distStart</samp> of 0, and the target node a <samp>distEnd</samp> of -0 (Yes thats a number.). The reason as to why a negative value is used will become apparent as the algorithm terminates. <br/>
+		The program then loops through the partner nodes of the origin node, assigning them all a <samp>distStart</samp> of 1 and checking each one if they have a <samp>distEnd</samp> assigned. If there is a <samp>distEnd</samp> assigned at this stage, it must be -0 and so we have found the shortest path, as the two nodes are linked by only one path.<br />
+		Assuming that the network is more complex than that, the loop terminates and we now have a network with 0, 1, and -0 nodes assigned. We then loop through the partner nodes of the target node, and assign each of them a <samp>distEnd</samp> of -1. If any of them have a <samp>distStart</samp> assigned, then we know that we have a link and we can trace backward from this point to the orign and start node to get a direct path that is guaranteed to be the shortest.<br/>
+		But what if there are multiple points with both defined?<br/>
+		Well, assuming the algorithm is implemented correctly, both of the points are equally valid and both will give the shortest path from the origin to the target.<br/>
+		If the origin and target nodes are further apart than this, then this positive/negative looping cycling continues until a point is found with a <samp>distStart</samp> and <samp>distEnd</samp> is defined, after which the path can be traced forward and back.<br/>
 		<br /> <br/>
 		All of the artwork and photography for this blog is from <a href="//unsplash.com">Unsplash</a>, who offer free to use high resolution images. We at Amicum love their artwork and highly recommend it to any developer.   
 	</p>
